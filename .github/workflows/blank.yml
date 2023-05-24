@@ -29,7 +29,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello > world.txt
 
-      - uses: actions/checkout@v3
+      - uses: actions/upload-artifact@v3
         with:
          name: aaaa
          path: ./world.txt
