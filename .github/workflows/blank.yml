@@ -43,8 +43,8 @@ jobs:
       - name: test1
         id: step2
         run: |
-         shell: sh
-         if: steps.checkout_done.outcome == 'success'
+        shell: sh
+        if: steps.checkout_done.outcome == 'success'
          `echo sh -version`
         
 
