@@ -43,9 +43,9 @@ jobs:
       - name: test1
         id: step2
         run: |
-         if: steps.checkout_done.outcome == 'success'
          `echo sh -version`
           sh -version
+        if: steps.checkout_done.outcome == 'success'
         
 
       # Runs a set of commands using the runners shell
