@@ -21,7 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     name: My CI
     outputs:
-      checkout_done: ${{ steps.check.outputs.checkout_done }}
+      checkout_done: ${{ steps.checkout.outputs.checkout_done }}
+      upload_done:   ${{ steps.check.outputs.checkout_done }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -32,8 +33,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello > world.txt
-
-      - uses: actions/upload-artifact@v3
+      
+      - id: upload
+        uses: actions/upload-artifact@v3
         with:
          name: aaaa
          path: uploadtest
