@@ -45,6 +45,7 @@ jobs:
         run: |
          `echo sh -version`
           sh -version
+          pwd
         if: steps.checkout_done.outcome == 'success'
         
 
