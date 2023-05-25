@@ -37,8 +37,9 @@ jobs:
       - name: test1
         id: step2
         run: |
-          sh uploadtest/test.sh
-        if: steps.checkout_done.outcome == 'success'
+         echo "ENV=" $GITHUB_ENV
+         sh uploadtest/test.sh
+     #   if: steps.checkout_done.outcome == 'success'
 
       - id: upload
         uses: actions/upload-artifact@v3
