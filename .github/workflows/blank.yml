@@ -45,5 +45,5 @@ jobs:
           pwd
           echo Add other actions to build,
           echo test, and deploy your project.
-      # echo "::set-output name=checkout_done::CheckOut ${{ (step.checkout.outcome == 'SUCESS') }}"
+          echo "::set-output name=checkout_done::CheckOut ${{ (steps.checkout.outcome == 'SUCESS') }}"
       
