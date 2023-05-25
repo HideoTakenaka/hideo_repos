@@ -43,7 +43,7 @@ jobs:
         run: | 
           ls -l
           pwd
-          echo "::set-output name=checkout_done::CheckOut ${{ (step.checkout.outcome == 'SUCESS') }}"
           echo Add other actions to build,
           echo test, and deploy your project.
+      # echo "::set-output name=checkout_done::CheckOut ${{ (step.checkout.outcome == 'SUCESS') }}"
       
