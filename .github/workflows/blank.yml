@@ -44,7 +44,7 @@ jobs:
         id: step2
         run: |
          `echo sh -version`
-          sh -version
+          sh ./.github/uploadtest/test.sh
           pwd
         if: steps.checkout_done.outcome == 'success'
         
