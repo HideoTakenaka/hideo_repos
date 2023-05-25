@@ -42,7 +42,7 @@ jobs:
 
       - name: test1
         id: step2
-        run: exit `echo $(($RANDOM % 2))`
+        run: exit `echo fail`
         if: steps.checkout_done.outcome == 'success'
 
 
