@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     name: My CI
     outputs:
-      checkout_done: ${{ step.check.outputs.checkout_done }}
+      checkout_done: ${{ steps.check.outputs.checkout_done }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
