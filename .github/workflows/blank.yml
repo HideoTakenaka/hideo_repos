@@ -38,14 +38,14 @@ jobs:
       - name: Run a one-line script
         run: |
           echo "this is env=${{ env.env_1 }}"
- #         echo "attempt1=${{ github.run_attempt }}
+          echo "attempt1=${{ github.run_attempt }}"
 
       - name: test1
         id: step2
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
          sh uploadtest/test.sh
-     #   echo "attempt2=${{ github.run_attempt }}
+     #   echo "attempt2=${{ github.run_attempt }}"
      #   if: steps.checkout_done.outcome == 'success'
 
       - id: upload
@@ -65,7 +65,7 @@ jobs:
           echo "last is env=${{ env.env_1 }}"
           echo "last2 is env=$ENV_2"
           echo "branch name=${{ github.ref_name }}"
-          echo "attempt3=${{ github.run_attempt }}
+          echo "attempt3=${{ github.run_attempt }}"
           
           
        # echo Add other actions to build,
