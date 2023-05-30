@@ -37,6 +37,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo "this is env=${{ env.env_1 }}"
+        
 
       - name: test1
         id: step2
@@ -48,8 +49,9 @@ jobs:
       - id: upload
         uses: actions/upload-artifact@v3
         with:
-         name: aaaa
+         name: "fm_ci_${{ github.run_id }}"
          path: uploadtest
+         retention-days: 2
 
         
 
@@ -60,6 +62,8 @@ jobs:
           echo "last is env=${{ env.env_1 }}"
           echo "last2 is env=$ENV_2"
           echo "branch name=${{ github.ref_name }}"
+          
+          
        # echo Add other actions to build,
        # echo test, and deploy your project.
        # echo "checkout_done=CheckOut ${{ (steps.checkout.outcome == 'SUCESS') }}"
