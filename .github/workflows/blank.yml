@@ -41,7 +41,7 @@ jobs:
       - name: test1
         id: step2
         run: |
-         echo "ENV_2=test0001 >> $GITHUB_ENV
+         echo "ENV_2=test0001">> $GITHUB_ENV
          sh uploadtest/test.sh
      #   if: steps.checkout_done.outcome == 'success'
 
