@@ -59,6 +59,7 @@ jobs:
           echo "${{ (steps.checkout.outcome) }}"
           echo "last is env=${{ env.env_1 }}"
           echo "last2 is env=$ENV_2"
+          echo "branch name=${{ github.ref.name }}"
        # echo Add other actions to build,
        # echo test, and deploy your project.
        # echo "checkout_done=CheckOut ${{ (steps.checkout.outcome == 'SUCESS') }}"
