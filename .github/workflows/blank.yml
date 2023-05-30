@@ -46,11 +46,11 @@ jobs:
 #      - id: step2
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
-         echo `ls -la`
          bash uploadtest/test.sh
         # chmod +x uploadtest/test.sh
         # shell: bash
 #         sh uploadtest/test.sh
+#         echo `ls -la`
      #   echo "attempt2=${{ github.run_attempt }}"
      #   if: steps.checkout_done.outcome == 'success'
 
@@ -69,11 +69,13 @@ jobs:
       - name: step4
 #      - name: Run a multi-line script
         run: | 
-          echo "${{ (steps.checkout.outcome) }}"
-          echo "last is env=${{ env.env_1 }}"
-          echo "last2 is env=$ENV_2"
-          echo "branch name=${{ github.ref_name }}"
-          echo "attempt3=${{ github.run_attempt }}"
+          echo "checkout= ${{ (steps.checkout.outcome) }}"
+          echo "step2=${{ (steps.step2.outcome) }}"
+          echo "step3=${{ (steps.upload.outcome) }}"
+#          echo "last is env=${{ env.env_1 }}"
+#          echo "last2 is env=$ENV_2"
+#          echo "branch name=${{ github.ref_name }}"
+#          echo "attempt3=${{ github.run_attempt }}"
           
           
        # echo Add other actions to build,
