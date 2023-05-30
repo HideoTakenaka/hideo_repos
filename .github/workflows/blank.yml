@@ -36,13 +36,15 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo "this is env=${{ env.env_1 }}"
-        
+        run: |
+          echo "this is env=${{ env.env_1 }}"
+          echo "attempt1=${{ github.run_attempt }}
 
       - name: test1
         id: step2
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
+         echo "attempt2=${{ github.run_attempt }}
          sh uploadtest/test.sh
      #   if: steps.checkout_done.outcome == 'success'
 
@@ -63,6 +65,7 @@ jobs:
           echo "last is env=${{ env.env_1 }}"
           echo "last2 is env=$ENV_2"
           echo "branch name=${{ github.ref_name }}"
+          echo "attempt3=${{ github.run_attempt }}
           
           
        # echo Add other actions to build,
