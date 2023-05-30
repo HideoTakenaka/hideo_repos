@@ -49,7 +49,8 @@ jobs:
       - id: upload
         uses: actions/upload-artifact@v3
         with:
-         name: "fm_ci_${{ github.run_id }}"
+         name: "fm_ci_${{ github.workflow }}"
+#         name: "fm_ci_${{ github.run_id }}"
          path: uploadtest
          retention-days: 2
 
