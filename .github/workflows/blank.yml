@@ -40,7 +40,7 @@ jobs:
           echo "this is env=${{ env.env_1 }}"
           echo "attempt1=${{ github.run_attempt }}"
 
-      - name: test1
+      - name: step2
         id: step2
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
