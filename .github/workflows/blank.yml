@@ -47,6 +47,7 @@ jobs:
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
          sh uploadtest/test.sh
+         shell: bash
      #   echo "attempt2=${{ github.run_attempt }}"
      #   if: steps.checkout_done.outcome == 'success'
 
