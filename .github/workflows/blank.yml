@@ -41,15 +41,15 @@ jobs:
           echo "this is env=${{ env.env_1 }}"
           echo "attempt1=${{ github.run_attempt }}"
 
-      - name: step2
-        id: step2
+#      - name: step2
+      - id: step2
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
          sh uploadtest/test.sh
      #   echo "attempt2=${{ github.run_attempt }}"
      #   if: steps.checkout_done.outcome == 'success'
 
-      - name: step3
+#      - name: step3
       - id: upload
         uses: actions/upload-artifact@v3
         with:
