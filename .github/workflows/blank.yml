@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 env:
-   env_1 : env_test
+   env_1 : env_test001
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
