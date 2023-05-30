@@ -50,8 +50,8 @@ jobs:
      #   echo "attempt2=${{ github.run_attempt }}"
      #   if: steps.checkout_done.outcome == 'success'
 
-#      - name: step3
-      - id: upload
+      - name: step3
+        id: upload
         uses: actions/upload-artifact@v3
         with:
          name: "fm_ci_${{ github.workflow }}"
