@@ -57,6 +57,7 @@ jobs:
       - name: Run a multi-line script
         run: | 
           echo "${{ (steps.checkout.outcome) }}"
+          echo "last is env=${{ env.env_1 }}"
        # echo Add other actions to build,
        # echo test, and deploy your project.
        # echo "checkout_done=CheckOut ${{ (steps.checkout.outcome == 'SUCESS') }}"
