@@ -49,7 +49,7 @@ jobs:
          echo "ENV_2=test0001">> $GITHUB_ENV
          bash uploadtest/test.sh
         # chmod +x uploadtest/test.sh
-        # shell: bash
+        shell: bash
 #         sh uploadtest/test.sh
 #         echo `ls -la`
      #   echo "attempt2=${{ github.run_attempt }}"
