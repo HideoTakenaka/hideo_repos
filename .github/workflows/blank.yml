@@ -85,6 +85,7 @@ jobs:
           echo "${{ (job.status == 'AAA' && 'good') || 'danger' }}" 
           echo "(${{ (steps.checkout.outcome) }} == 'success' && 'good') || 'danger'" 
           echo "${{ ( steps.step2.outcome == 'success' && 'good') || 'danger' }}" 
+          echo "${{ ( (steps.checkout.outcome == 'success' &&  steps.step2.outcome == 'success' ) && 'good') || 'danger' }}" 
 #          echo "${{ ( (${{ steps.checkout.outcome }} == 'success') && (${{ steps.step2.outcome }} == 'success') )  && 'good') || 'danger' }}"                  }}
           
           
