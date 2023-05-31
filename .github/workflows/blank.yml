@@ -69,7 +69,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: step4
+        env:
+         check= ${{ (steps.checkout.outcome) }}
 #      - name: Run a multi-line script
+        
         run: | 
           echo "checkout= ${{ (steps.checkout.outcome) }}"
           echo "step2=${{ (steps.step2.outcome) }}"
@@ -80,6 +83,7 @@ jobs:
           echo "${{ (job.status == 'success' && 'good') || 'danger' }}" 
           echo "${{ (job.status == 'AAA' && 'good') || 'danger' }}" 
           echo "(${{ (steps.checkout.outcome) }} == 'success' && 'good') || 'danger'" 
+          echo "${{ (check == 'success' && 'good') || 'danger'}}" 
 #          echo "${{ ( (${{ steps.checkout.outcome }} == 'success') && (${{ steps.step2.outcome }} == 'success') )  && 'good') || 'danger' }}"                  }}
           
           
