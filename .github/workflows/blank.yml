@@ -75,9 +75,9 @@ jobs:
           echo "step2=${{ (steps.step2.outcome) }}"
           echo "step3=${{ (steps.upload.outcome) }}"
           echo "${{ (job.status) }}" 
-          echo "${{ (job.status == 'SUCESS') }}" 
-          echo "${{ (job.status == 'SUCESS' && 'good') }}" 
-          echo "${{ (job.status == 'SUCESS' && 'good') || 'danger' }}" 
+          echo "${{ (job.status == 'success') }}" 
+          echo "${{ (job.status == 'success' && 'good') }}" 
+          echo "${{ (job.status == 'success' && 'good') || 'danger' }}" 
           
 #          echo "last is env=${{ env.env_1 }}"
 #          echo "last2 is env=$ENV_2"
