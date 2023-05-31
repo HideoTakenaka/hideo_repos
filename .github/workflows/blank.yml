@@ -43,12 +43,11 @@ jobs:
 
       - name: step2
         id: step2
- #       continue-on-error: true
+        continue-on-error: true
 #      - id: step2
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
-         uploadtest/test.sh
-#         bash uploadtest/test.sh
+         bash uploadtest/test.sh
         # chmod +x uploadtest/test.sh
 #        shell: bash
 #         sh uploadtest/test.sh
@@ -58,7 +57,7 @@ jobs:
 
       - name: step3
         id: upload
- #       continue-on-error: true
+        continue-on-error: true
         uses: actions/upload-artifact@v3
         with:
          name: "fm_ci_${{ github.workflow }}"
