@@ -78,6 +78,7 @@ jobs:
           echo "${{ (job.status == 'success') }}" 
           echo "${{ (job.status == 'success' && 'good') }}" 
           echo "${{ (job.status == 'success' && 'good') || 'danger' }}" 
+          echo "${{ (job.status == 'AAA' && 'good') || 'danger' }}" 
           
 #          echo "last is env=${{ env.env_1 }}"
 #          echo "last2 is env=$ENV_2"
