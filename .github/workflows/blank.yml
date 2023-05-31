@@ -47,8 +47,8 @@ jobs:
 #      - id: step2
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
-         uploadtest/test.sh
-#         bash uploadtest/test.sh
+         bash uploadtest/test.sh
+         shell: bash
         # chmod +x uploadtest/test.sh
 #        shell: bash
 #         sh uploadtest/test.sh
