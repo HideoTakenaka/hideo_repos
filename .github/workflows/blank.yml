@@ -74,6 +74,7 @@ jobs:
           echo "checkout= ${{ (steps.checkout.outcome) }}"
           echo "step2=${{ (steps.step2.outcome) }}"
           echo "step3=${{ (steps.upload.outcome) }}"
+          echo "${{ (job.status) }}" 
           echo "${{ (job.status == 'SUCESS') }}" 
           echo "${{ (job.status == 'SUCESS' && 'good') }}" 
           echo "${{ (job.status == 'SUCESS' && 'good') || 'danger' }}" 
