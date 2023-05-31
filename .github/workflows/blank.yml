@@ -47,7 +47,8 @@ jobs:
 #      - id: step2
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
-         bash uploadtest/test.sh
+         uploadtest/test.sh
+#         bash uploadtest/test.sh
         # chmod +x uploadtest/test.sh
 #        shell: bash
 #         sh uploadtest/test.sh
@@ -83,7 +84,7 @@ jobs:
           echo "${{ (job.status == 'success' && 'good') || 'danger' }}" 
           echo "${{ (job.status == 'AAA' && 'good') || 'danger' }}" 
           echo "(${{ (steps.checkout.outcome) }} == 'success' && 'good') || 'danger'" 
-          echo "${{ ( steps.checkout.outcome == 'success' && 'good') || 'danger' }}" 
+          echo "${{ ( steps.step2.outcome == 'success' && 'good') || 'danger' }}" 
 #          echo "${{ ( (${{ steps.checkout.outcome }} == 'success') && (${{ steps.step2.outcome }} == 'success') )  && 'good') || 'danger' }}"                  }}
           
           
