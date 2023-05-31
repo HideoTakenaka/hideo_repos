@@ -42,7 +42,7 @@ jobs:
           echo "attempt1=${{ github.run_attempt }}"
 
       - name: step2
-        id: step2_upload
+        id: step2
         continue-on-error: true
 #      - id: step2
         run: |
