@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 env:
-   env_1 : env_test001
+   env_1 : uploadtest
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -47,11 +47,12 @@ jobs:
 #      - id: step2
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
-         bash uploadtest/test.sh
+         bash ${{ env.env_1 }}"/test.sh
+#         bash uploadtest/test.sh
 #         bash test.sh
  #       with:
 #          uploadtest
-#         bash uploadtest/test.sh
+#         bash ${{ env.env_1 }}"/test.sh
 #         shell: bash
         # chmod +x uploadtest/test.sh
 #        shell: bash
