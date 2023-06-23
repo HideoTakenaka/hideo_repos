@@ -63,7 +63,8 @@ jobs:
 
       - name: step3
         id: upload
-        continue-on-error: true
+        if: success()
+#        continue-on-error: true
         uses: actions/upload-artifact@v3
         with:
          name: "fm_ci_${{ github.workflow }}"
