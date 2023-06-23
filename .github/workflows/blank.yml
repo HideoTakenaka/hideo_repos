@@ -47,7 +47,7 @@ jobs:
 #      - id: step2
         run: |
          echo "ENV_2=test0001">> $GITHUB_ENV
-         bash ${{ env.env_1 }}/test222.sh
+         bash ${{ env.env_1 }}/test.sh
 #         bash uploadtest/test.sh
 #         bash test.sh
  #       with:
@@ -63,8 +63,7 @@ jobs:
 
       - name: step3
         id: upload
-        if: success()
-#        continue-on-error: true
+        continue-on-error: true
         uses: actions/upload-artifact@v3
         with:
          name: "fm_ci_${{ github.workflow }}"
@@ -79,7 +78,8 @@ jobs:
         env:
          STATE: ${{ (steps.checkout.outcome) }}
 #      - name: Run a multi-line script
-        
+        if: success()
+       
         run: | 
           echo "checkout= ${{ (steps.checkout.outcome) }}"
           echo "step2=${{ (steps.step2.outcome) }}"
