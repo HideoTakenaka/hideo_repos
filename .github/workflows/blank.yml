@@ -75,11 +75,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: step4
+      - if: success()
         env:
          STATE: ${{ (steps.checkout.outcome) }}
 #      - name: Run a multi-line script
-        if: success()
-       
         run: | 
           echo "checkout= ${{ (steps.checkout.outcome) }}"
           echo "step2=${{ (steps.step2.outcome) }}"
