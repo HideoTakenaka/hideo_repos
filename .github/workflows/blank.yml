@@ -95,8 +95,9 @@ jobs:
 
 
       - name: step5
-        run: | 
-        if: success()
+        env:
+         STATE: ${{ (steps.checkout.outcome) }}
+        run: |
          echo "step5 start"
          echo "step5 end"
 
