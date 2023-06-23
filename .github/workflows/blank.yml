@@ -79,7 +79,6 @@ jobs:
          STATE: ${{ (steps.checkout.outcome) }}
 #      - name: Run a multi-line script
         run: | 
-        if: success()
           echo "checkout= ${{ (steps.checkout.outcome) }}"
           echo "step2=${{ (steps.step2.outcome) }}"
           echo "step3=${{ (steps.upload.outcome) }}"
@@ -98,7 +97,7 @@ jobs:
         env:
          STATE: ${{ (steps.checkout.outcome) }}
         run: |
-        if: success()
+        if: steps.step3.outcome == 'success'
          echo "step5 start"
          echo "step5 end"
 
