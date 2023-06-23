@@ -94,6 +94,12 @@ jobs:
           echo "done=CheckOut ${{ (job.status) }}" 
 
 
+      - name: step5
+        run: | 
+        if: success()
+          echo "step5 start"
+
+
 #          echo "${{ ( (${{ steps.checkout.outcome }} == 'success') && (${{ steps.step2.outcome }} == 'success') )  && 'good') || 'danger' }}"                  }}
           
           
