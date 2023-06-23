@@ -79,7 +79,6 @@ jobs:
          STATE: ${{ (steps.checkout.outcome) }}
 #      - name: Run a multi-line script
         run: | 
-        if: success()
           echo "checkout= ${{ (steps.checkout.outcome) }}"
           echo "step2=${{ (steps.step2.outcome) }}"
           echo "step3=${{ (steps.upload.outcome) }}"
@@ -93,25 +92,10 @@ jobs:
           echo "${{ ( (steps.checkout.outcome == 'success' &&  steps.step2.outcome == 'success' ) && 'good') || 'danger' }}" 
           echo "done=CheckOut ${{ (job.status) }}" 
 
-
       - name: step5
         env:
          STATE: ${{ (steps.checkout.outcome) }}
         run: |
+        if: success()
          echo "step5 start"
          echo "step5 end"
-
-
-#          echo "${{ ( (${{ steps.checkout.outcome }} == 'success') && (${{ steps.step2.outcome }} == 'success') )  && 'good') || 'danger' }}"                  }}
-          
-          
-#          echo "last is env=${{ env.env_1 }}"
-#          echo "last2 is env=$ENV_2"
-#          echo "branch name=${{ github.ref_name }}"
-#          echo "attempt3=${{ github.run_attempt }}"
-          
-          
-       # echo Add other actions to build,
-       # echo test, and deploy your project.
-       # echo "checkout_done=CheckOut ${{ (steps.checkout.outcome == 'SUCESS') }}"
-      
