@@ -67,7 +67,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
          name: "fm_ci_${{ github.workflow }}"
-         path: uploadtest
+         path: uploadtest22222222
          retention-days: 2
 #         name: "fm_ci_${{ github.run_id }}"
 
